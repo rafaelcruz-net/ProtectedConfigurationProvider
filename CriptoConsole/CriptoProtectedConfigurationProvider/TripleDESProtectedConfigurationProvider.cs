@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace CriptoConsole
+namespace CriptoProtectedConfigurationProvider
 {
     public class TripleDESProtectedConfigurationProvider : ProtectedConfigurationProvider
     {
@@ -17,18 +17,22 @@ namespace CriptoConsole
         private string key = "Sgo0k8dv112TCU0BiMNOo0tfR5AYmXeC";
         private string IV = "mmVbNIIj8k4=";
 
-        public override void Initialize(string name, NameValueCollection config)
+        public TripleDESProtectedConfigurationProvider()
         {
-
             //Lê a chave e o IV
             tripleDesCripto.Key = Convert.FromBase64String(key);
             tripleDesCripto.IV = Convert.FromBase64String(IV);
+            //ECB(Electronic code Book)
 
-            base.Initialize(name, config);
+            tripleDesCripto.Mode = CipherMode.ECB;
+            //padding mode se tiver qualquer byte adicional a ser adicionado
+            tripleDesCripto.Padding = PaddingMode.PKCS7;
         }
+
 
         public override XmlNode Encrypt(XmlNode node)
         {
+
             string encryptedData = EncryptString(node.OuterXml);
 
             //Cria a seção ou o Web Config Criptografado

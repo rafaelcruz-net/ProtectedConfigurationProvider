@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriptoConsole", "CriptoCons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriptoASPNET", "CriptoASPNET\CriptoASPNET.csproj", "{ACD020C5-C609-425D-BC98-9D09D445770D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriptoProtectedConfigurationProvider", "CriptoProtectedConfigurationProvider\CriptoProtectedConfigurationProvider.csproj", "{37CF1321-D300-4469-ADF0-B1B651DA59EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ACD020C5-C609-425D-BC98-9D09D445770D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACD020C5-C609-425D-BC98-9D09D445770D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACD020C5-C609-425D-BC98-9D09D445770D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CF1321-D300-4469-ADF0-B1B651DA59EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CF1321-D300-4469-ADF0-B1B651DA59EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CF1321-D300-4469-ADF0-B1B651DA59EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CF1321-D300-4469-ADF0-B1B651DA59EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

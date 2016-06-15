@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CriptoProtectedConfigurationProvider;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -16,18 +17,19 @@ namespace CriptoConsole
 
         static void Main(string[] args)
         {
-            
-
             var path = String.Empty;
-            while (String.IsNullOrEmpty(path))
-            {
-                Console.WriteLine("Selecione o caminho do Web.config");
-                path = Console.ReadLine();
-            }
+             while (String.IsNullOrEmpty(path))
+             {
+                 Console.WriteLine("Selecione o caminho do Web.config");
+                 path = Console.ReadLine();
+             }
 
-            ProtectedConfiguration(path);
+             ProtectedConfiguration(path);
 
+            Console.WriteLine("Web Config criptografado com sucesso");
             Console.Read();
+
+
         }
 
         private static void ProtectedConfiguration(string path)
@@ -37,7 +39,7 @@ namespace CriptoConsole
             doc.Load(path);
 
             //Cria a seção criptografada
-            var xmlContent = @"<configProtectedData><providers><add name='TripleDESProtectedConfigurationProvider' Type='' /></providers></configProtectedData>";
+            var xmlContent = @"<configProtectedData><providers><add name='TripleDESProtectedConfigurationProvider' type='CriptoProtectedConfigurationProvider.TripleDESProtectedConfigurationProvider, CriptoProtectedConfigurationProvider' /></providers></configProtectedData>";
 
             XElement element = XDocument.Parse(xmlContent).Root;
 
